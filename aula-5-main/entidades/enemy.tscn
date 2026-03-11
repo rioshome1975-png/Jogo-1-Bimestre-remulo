@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://wt8v1luy0knp"]
+
+[ext_resource type="Script" uid="uid://bfrjgqus5lqlg" path="res://Scripts/Enemy.gd" id="1_jb646"]
+[ext_resource type="Texture2D" uid="uid://bs7mnaq68sq1r" path="res://Sprites/Plataform Cute/Objects/Prickles.png" id="2_8vd5i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3b4e"]
+size = Vector2(28, 12)
+
+[node name="Area2D" type="Area2D" unique_id=1799951656]
+script = ExtResource("1_jb646")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1484335933]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_u3b4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1199470336]
+texture = ExtResource("2_8vd5i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
